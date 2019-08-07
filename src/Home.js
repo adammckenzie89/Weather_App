@@ -5,7 +5,8 @@ import Form from "./Components/Form";
 import Titles from "./Components/Titles";
 import Weather from "./Components/Weather";
 
- const { API_KEY }  = process.env
+
+const REACT_APP_KEY ='fd8a7245b8a05140321698de9c5d573f';
 
 class Home extends React.Component{
   state = {
@@ -22,7 +23,7 @@ class Home extends React.Component{
   const city = e.target.elements.city.value;
   const country = e.target.elements.country.value;
 
-  axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${API_KEY}`).then(response => {
+  axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${REACT_APP_KEY}`).then(response => {
     if(city && country){
     this.setState({
       temperature: response.data.main.temp,
