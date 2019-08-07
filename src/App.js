@@ -1,26 +1,62 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import css from "./App.css";
+import Form from "./Components/Form";
+import Titles from "./Components/Titles";
+import Weather from "./Components/Weather";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Api_Key = 'fd8a7245b8a05140321698de9c5d573f'
+
+class App extends React.Component{
+  state = {
+        temperature: undefined,
+        city: undefined,
+        country: undefined,
+        humidity: undefined,
+        description: undefined,
+        error: ""
+    }
+
+  getWeather = async (e) => {
+  e.preventDefault();
+  const city = e.target.elements.city.value;
+  const country = e.target.elements.country.value;
+
+  axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${Api_Key}`).then(response => {
+    if(city && country){
+    this.setState({
+      temperature: response.data.main.temp,
+      city: response.data.name,
+      country: response.data.sys.country,
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
+      error: ""
+    })
+    }else{
+      this.setState({
+        error: "Please enter a location"
+      })
+    }
+    console.log(response)
+  })
+  }
+
+   render(){
+    return(
+      <div>
+        <Titles />
+        <Form 
+        loadWeather={this.getWeather} />
+        <Weather 
+          temperature={this.state.temperature}
+          city={this.state.city}
+          country={this.state.country}
+          humidity={this.state.humidity}
+          description={this.state.description}
+          error={this.state.error} />
+      </div>
+   )
+  }
 }
 
 export default App;
