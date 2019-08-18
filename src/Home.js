@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
 import axios from "axios";
 import css from "./App.css";
 import Form from "./Components/Form";
 import Titles from "./Components/Titles";
 import Weather from "./Components/Weather";
+import styles from "./Home.module.scss";
 
 
 const REACT_APP_KEY ='fd8a7245b8a05140321698de9c5d573f';
 
-class Home extends React.Component{
+class Home extends Component{
   state = {
         temperature: undefined,
         city: undefined,
@@ -44,10 +45,17 @@ class Home extends React.Component{
 
    render(){
     return(
-      <div>
+      <main >
+        <section className={styles.letSee}>
+          <div className={styles.titles}>
         <Titles />
+          </div>
+        </section>
+        <section className={styles.form}>
         <Form 
         loadWeather={this.getWeather} />
+        </section>
+        <section className={styles.weather}>
         <Weather 
           temperature={this.state.temperature}
           city={this.state.city}
@@ -55,7 +63,8 @@ class Home extends React.Component{
           humidity={this.state.humidity}
           description={this.state.description}
           error={this.state.error} />
-      </div>
+        </section>
+      </main>
    )
   }
 }

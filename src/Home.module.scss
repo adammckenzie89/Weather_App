@@ -1,0 +1,39 @@
+body {
+    background: url("https://backgroundcheckall.com/wp-content/uploads/2017/12/photo-background-app-5.png")
+}
+
+.titles{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    width: 100%;
+    background: #DBFCFF;
+}
+
+.letSee {
+    display: flex;
+    justify-content: center;
+    // height: 500px;
+    align-items: column;
+    background: #DBFCFF;
+}
+
+.home {
+    border: 1px solid green;
+}
+
+.weather {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    margin: 20px;
+    background: #DBFCFF;
+}
+.form {
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid red;
+    margin: 20px;
+    background: #DBFCFF;
+}

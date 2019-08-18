@@ -1,4 +1,5 @@
 import React from "react";
+// import styles from "./Titles.module.scss";
 
 const Titles = (props) =>{
   return (
