@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from "axios";
 import css from "./App.css";
 import Form from "./Components/Form";
@@ -42,8 +42,8 @@ class Home extends Component{
     console.log(response)
   })
   }
-
    render(){
+  const time = new Date().toLocaleString()
     return(
       <main >
         <section className={styles.letSee}>
@@ -64,6 +64,9 @@ class Home extends Component{
           description={this.state.description}
           error={this.state.error} />
         </section>
+        <div className={styles.time}>
+        {time}
+        </div>
       </main>
    )
   }
