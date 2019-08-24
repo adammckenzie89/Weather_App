@@ -49,6 +49,7 @@ class Home extends Component{
         <section className={styles.letSee}>
           <div className={styles.titles}>
         <Titles />
+      
           </div>
         </section>
         <section className={styles.form}>
