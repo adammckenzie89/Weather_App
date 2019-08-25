@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Weather = (props) => {
   return(
       <div>
@@ -10,4 +11,5 @@ const Weather = (props) => {
     </div>
    )
 }
+
 export default Weather;

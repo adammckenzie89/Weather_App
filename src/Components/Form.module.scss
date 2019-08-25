@@ -1,14 +1,28 @@
 .weather_button {
-    background: gray;
+    background: red;
     color: white;
-    margin: 5px;
+    margin-top: 20px;
+    height: 40px;
+    border-radius: 15px;
+
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 input {
+    // display: flex;
     border-bottom: 2px solid black;
     margin: 5px;
+    font-size: 20px;
+    justify-content: center;
+    align-content: center;
     background: #DBFCFF;
     border-top: none;
     border-left: none;
     border-right: none;
+    outline: none;
 }

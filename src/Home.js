@@ -42,14 +42,14 @@ class Home extends Component{
     console.log(response)
   })
   }
-   render(){
+
+  render(){
   const time = new Date().toLocaleString()
     return(
       <main >
         <section className={styles.letSee}>
           <div className={styles.titles}>
         <Titles />
-      
           </div>
         </section>
         <section className={styles.form}>

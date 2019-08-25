@@ -26,6 +26,7 @@ body {
     display: flex;
     justify-content: center;
     border: 1px solid red;
+    font-size: 20px;
     margin: 20px;
     background: #DBFCFF;
 }
@@ -33,16 +34,19 @@ body {
     height: 80px;
     display: flex;
     justify-content: space-evenly;
-    border: 1px solid red;
+    border: 1px solid green;
     margin: 20px;
     background: #DBFCFF;
+    outline: none;
 }
 
 .time{
     display: flex;
     justify-content: center;
+    align-items: center;
     border: 1px solid red;
+    font-size: 20px;
     margin: 20px;
     background: #DBFCFF;
     height: 40px;
-}
+    }
