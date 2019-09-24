@@ -14,6 +14,7 @@ class Home extends Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
+    icon: "",
     error: ""
   };
 
@@ -34,6 +35,7 @@ class Home extends Component {
             country: response.data.sys.country,
             humidity: response.data.main.humidity,
             description: response.data.weather[0].description,
+            icon: response.data.weather[0].icon,
             error: ""
           });
         } else {
@@ -64,6 +66,7 @@ class Home extends Component {
             humidity={this.state.humidity}
             temperature={this.state.temperature}
             description={this.state.description}
+            icon={this.state.icon}
             error={this.state.error}
           />
         </section>
